@@ -23,7 +23,7 @@ body {
 
 /* Profile Section */
 .profile .logo {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-bottom: 15px;
 }
