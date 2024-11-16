@@ -16,7 +16,29 @@
             <p class="email">varjpolymer7@gmail.com</p>
         </div>
         <div class="buttons">
-            <button class="save-contact">Save Contact</button>
+            <button class="save-contact" id="saveContactBtn">Save Contact</button>
+
+<script>
+        document.getElementById("saveContactBtn").addEventListener("click", function() {
+        const vCardData = `BEGIN:VCARD
+                        VERSION:3.0
+                        FN:SHAGUN FESHAION
+                        TEL:81281 91768
+                        EMAIL:varjpolymer7@gmail.com
+                        END:VCARD`;
+    
+    // Create a Blob with the vCard data
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    
+    // Create a link to download the vCard
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'contact.vcf';
+    
+    // Programmatically click the link to trigger the download
+    link.click();
+});
+</script>
             <div class="social-links">
                 <!-- <a href="#" class="social youtube">YouTube</a>-->
                 <a href="https://www.whatsapp.com/channel/0029VaIt2Z6KgsNpMAMaXM0i?fbclid=PAY2xjawGlD2dleHRuA2FlbQIxMQABpubIwvPeQ1gdcRCsgp03uJM9WqyfFsnLE3c3jLGIACF-B7LgI4gurvybvg_aem_dbrfKdUl8uBpzkaqhgCXqQ" class="social whatsapp">WhatsApp</a>
